@@ -10,7 +10,7 @@ using Kompas6Constants3D;
 using KompasAPI7;
 
 namespace KompasApi;
-public class KompasWrapper
+public class KompasWrapper: IWrapper
 {
     /// <summary>
     /// Объект Компас 3D.
@@ -86,7 +86,7 @@ public class KompasWrapper
     /// </summary>
     /// <param name="n"> Плоскость</param>
     /// <returns> Объект эскиза</returns>
-    public KompasSketch CreateNewSketch(int n)
+    public ISketch CreateNewSketch(int n)
     {
         return new KompasSketch(_part, n);
     }
@@ -97,7 +97,7 @@ public class KompasWrapper
     /// <param name="sketch"> Объект эскиза</param>
     /// <param name="distance"> Дистанция для выдавливания</param>
     /// <exception cref="TypeAccessException"></exception>
-    public void Extrude(KompasSketch sketch, double distance)
+    public void Extrude(ISketch sketch, double distance)
     {
         if (!(sketch is KompasSketch kompasSketch))
         {

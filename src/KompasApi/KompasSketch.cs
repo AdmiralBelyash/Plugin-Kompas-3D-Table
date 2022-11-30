@@ -8,7 +8,7 @@ using Kompas6API5;
 using Kompas6Constants3D;
 
 namespace KompasApi;
-public class KompasSketch
+public class KompasSketch: ISketch
 {
     /// <summary>
     /// 2D документ.

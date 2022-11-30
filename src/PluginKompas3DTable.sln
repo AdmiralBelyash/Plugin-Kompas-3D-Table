@@ -11,6 +11,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginKompas3DTableApp", "PluginKompas3DTableApp\PluginKompas3DTableApp.csproj", "{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{722EF699-1452-4C6D-AF98-AA1F66AB7EDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBuilder", "Tests\TestBuilder\TestBuilder.csproj", "{8F00662E-0384-4F8C-ADEE-BC18A8EB32A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTestClass", "Tests\CommonTestClass\CommonTestClass.csproj", "{19640D1E-D556-4EEC-8F9F-05FAA3502273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel", "Tests\TestModel\TestModel.csproj", "{6F09018A-60A7-4FE5-AD8C-25786900D304}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTableBuildingVM", "Tests\TesttableBuildingVM\TestTableBuildingVM.csproj", "{4798F370-8B31-42A4-9DBC-8F652C589C10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +43,31 @@ Global
 		{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F00662E-0384-4F8C-ADEE-BC18A8EB32A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F00662E-0384-4F8C-ADEE-BC18A8EB32A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F00662E-0384-4F8C-ADEE-BC18A8EB32A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F00662E-0384-4F8C-ADEE-BC18A8EB32A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19640D1E-D556-4EEC-8F9F-05FAA3502273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19640D1E-D556-4EEC-8F9F-05FAA3502273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19640D1E-D556-4EEC-8F9F-05FAA3502273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19640D1E-D556-4EEC-8F9F-05FAA3502273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F09018A-60A7-4FE5-AD8C-25786900D304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F09018A-60A7-4FE5-AD8C-25786900D304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F09018A-60A7-4FE5-AD8C-25786900D304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F09018A-60A7-4FE5-AD8C-25786900D304}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4798F370-8B31-42A4-9DBC-8F652C589C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4798F370-8B31-42A4-9DBC-8F652C589C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4798F370-8B31-42A4-9DBC-8F652C589C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4798F370-8B31-42A4-9DBC-8F652C589C10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F00662E-0384-4F8C-ADEE-BC18A8EB32A3} = {722EF699-1452-4C6D-AF98-AA1F66AB7EDA}
+		{19640D1E-D556-4EEC-8F9F-05FAA3502273} = {722EF699-1452-4C6D-AF98-AA1F66AB7EDA}
+		{6F09018A-60A7-4FE5-AD8C-25786900D304} = {722EF699-1452-4C6D-AF98-AA1F66AB7EDA}
+		{4798F370-8B31-42A4-9DBC-8F652C589C10} = {722EF699-1452-4C6D-AF98-AA1F66AB7EDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79B8FF2A-5E67-4682-B518-226F2D9542AF}

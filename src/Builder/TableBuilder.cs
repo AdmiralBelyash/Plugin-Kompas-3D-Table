@@ -16,7 +16,7 @@ namespace Builder
         /// </summary>
         /// <param name="tableParameters">Параметры стола</param>
         /// <param name="apiService">Компас апи</param>
-        public void BuildTable(TableParameters tableParameters, KompasWrapper apiService)
+        public void BuildTable(TableParameters tableParameters, IWrapper apiService)
         {
             apiService.CreateDocument();
 
@@ -27,7 +27,7 @@ namespace Builder
             _createLeftBottomTableLeg(tableParameters, apiService);
         }
 
-        private void _createTableTop(TableParameters tableParameters, KompasWrapper apiService)
+        private void _createTableTop(TableParameters tableParameters, IWrapper apiService)
         {
             var points = new List<PointF>
             {
@@ -43,7 +43,7 @@ namespace Builder
             apiService.Extrude(sketchXy, tableParameters.TableParameterCollection[ParameterType.TableThickness].Value);
         }
 
-        private void _createRightTopTableLeg(TableParameters tableParameters, KompasWrapper apiService)
+        private void _createRightTopTableLeg(TableParameters tableParameters, IWrapper apiService)
         {
             var points = new List<PointF>
             {
@@ -64,7 +64,7 @@ namespace Builder
             apiService.Extrude(sketchXy, tableParameters.TableParameterCollection[ParameterType.TableHeight].Value);
         }
 
-        private void _createRightBottomTableLeg(TableParameters tableParameters, KompasWrapper apiService)
+        private void _createRightBottomTableLeg(TableParameters tableParameters, IWrapper apiService)
         {
             var points = new List<PointF>
             {
@@ -87,7 +87,7 @@ namespace Builder
             apiService.Extrude(sketchXy, tableParameters.TableParameterCollection[ParameterType.TableHeight].Value);
         }
 
-        private void _createLeftTopTableLeg(TableParameters tableParameters, KompasWrapper apiService)
+        private void _createLeftTopTableLeg(TableParameters tableParameters, IWrapper apiService)
         {
             var points = new List<PointF>
             {
@@ -110,7 +110,7 @@ namespace Builder
             apiService.Extrude(sketchXy, tableParameters.TableParameterCollection[ParameterType.TableHeight].Value);
         }
 
-        private void _createLeftBottomTableLeg(TableParameters tableParameters, KompasWrapper apiService)
+        private void _createLeftBottomTableLeg(TableParameters tableParameters, IWrapper apiService)
         {
             var points = new List<PointF>
             {
