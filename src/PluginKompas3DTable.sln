@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "Builder\Builder.csproj", "{81E2BCEF-8859-4400-90E0-BDD783A1A004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KompasApi", "KompasApi\KompasApi.csproj", "{B631B31E-DC0E-4EA9-B20A-72511CEAB3E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7CF236A3-393B-4CED-B8C7-B541840A3A20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginKompas3DTableApp", "PluginKompas3DTableApp\PluginKompas3DTableApp.csproj", "{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81E2BCEF-8859-4400-90E0-BDD783A1A004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E2BCEF-8859-4400-90E0-BDD783A1A004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E2BCEF-8859-4400-90E0-BDD783A1A004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E2BCEF-8859-4400-90E0-BDD783A1A004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B631B31E-DC0E-4EA9-B20A-72511CEAB3E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B631B31E-DC0E-4EA9-B20A-72511CEAB3E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B631B31E-DC0E-4EA9-B20A-72511CEAB3E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B631B31E-DC0E-4EA9-B20A-72511CEAB3E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF236A3-393B-4CED-B8C7-B541840A3A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF236A3-393B-4CED-B8C7-B541840A3A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF236A3-393B-4CED-B8C7-B541840A3A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF236A3-393B-4CED-B8C7-B541840A3A20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79B8FF2A-5E67-4682-B518-226F2D9542AF}
+	EndGlobalSection
+EndGlobal
