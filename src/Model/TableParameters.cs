@@ -49,7 +49,7 @@ public class TableParameters : ObservableObject
     #region -- Public Methods --
 
     /// <summary>
-    /// Установить значения поумолчанию
+    /// Установить значения по-умолчанию
     /// </summary>
     public void SetDefaultValues()
     {
@@ -188,7 +188,7 @@ public class TableParameters : ObservableObject
     }
 
     /// <summary>
-    /// Установить значения по-умолчанию.
+    /// Установить минимальные.
     /// </summary>
     public void SetMinimumValues()
     {

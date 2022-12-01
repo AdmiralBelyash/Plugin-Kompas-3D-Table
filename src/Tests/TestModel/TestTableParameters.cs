@@ -1,7 +1,7 @@
 using Model;
 using NUnit.Framework;
 
-namespace TestCore;
+namespace TestModel;
 
 /// <summary>
 /// Класс для тестирования класса <see cref="Model.TableParameters"/>.
@@ -146,5 +146,35 @@ public class TestTableParameters
         tableParameters.TableParameterCollection[parameterType].Value = value;
         Assert.That(tableParameters.TableParameterCollection[parameterType].HasError, Is.EqualTo(true),
             "Присвоило значение не входящие в диапазон.");
+    }
+
+    [TestCase(ParameterType.TableHeight, 300, 600, 1200,
+        TestName = "Проверка установки дефолтных параметров TableHeight.")]
+    [TestCase(ParameterType.TableLength, 300, 1000, 2000,
+        TestName = "Проверка установки дефолтных параметров TableLength.")]
+    [TestCase(ParameterType.TableWidth, 300, 1000, 2000,
+        TestName = "Проверка установки дефолтных параметрова TableWidth.")]
+    [TestCase(ParameterType.TableThickness, 10, 20, 50,
+        TestName = "Проверка установки дефолтных параметров TableThickness.")]
+    [TestCase(ParameterType.TableLegsLengthDistance, 290, 990, 1990,
+        TestName = "Проверка установки дефолтных параметров TableLegsLengthDistance.")]
+    [TestCase(ParameterType.TableLegsWidthDistance, 290, 990, 1990,
+        TestName = "Проверка установки дефолтных параметров TableLegsWidthDistance.")]
+    [TestCase(ParameterType.TableLengthLegsEdgeDistance, 10, 10, 10,
+        TestName = "Проверка установки дефолтных параметров TableLengthLegsEdgeDistance.")]
+    [TestCase(ParameterType.TableWidthLegsEdgeDistance, 10, 10, 10,
+        TestName = "Проверка установки дефолтных параметров TableWidthLegsEdgeDistance.")]
+    public void TestSetCorrect_DefaultParameters(ParameterType parameterType, double minValue, double maxValue,
+        double avgValue)
+    {
+        var tableParameters = TableParameters;
+        tableParameters.SetMinimumValues();
+        tableParameters.TableParameterCollection[parameterType].Value = minValue;
+
+        tableParameters.SetAverageValues();
+        tableParameters.TableParameterCollection[parameterType].Value = avgValue;
+
+        tableParameters.SetMaximumValues();
+        tableParameters.TableParameterCollection[parameterType].Value = maxValue;
     }
 }
