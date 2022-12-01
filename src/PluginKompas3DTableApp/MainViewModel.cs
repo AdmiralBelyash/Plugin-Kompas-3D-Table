@@ -83,9 +83,9 @@ namespace PluginKompas3DTableApp
         {
             if (!TableParameters.TableParameterCollection.All(x => x.Value.HasError))
             {
-                TableBuilder s = new TableBuilder();
+                TableBuilder builder = new TableBuilder();
                 var api = new KompasWrapper();
-                await Task.Run(() => s.BuildTable(TableParameters, api));
+                await Task.Run(() => builder.BuildTable(TableParameters, api));
             }
         });
 
