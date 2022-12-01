@@ -19,12 +19,10 @@ public class TestParameter
         var parameter = new Parameter();
         parameter.MinValue = -10;
         parameter.MaxValue = -10;
-        Assert.That(
-                    parameter.MinValue,
+        Assert.That(parameter.MinValue,
                     Is.EqualTo(0),
                     "Негативное значение превратилось в ноль.");
-        Assert.That(
-            parameter.MaxValue,
+        Assert.That(parameter.MaxValue,
             Is.EqualTo(0),
             "Негативное значение превратилось в ноль.");
 

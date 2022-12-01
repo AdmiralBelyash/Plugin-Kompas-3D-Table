@@ -57,49 +57,49 @@ public class TableParameters : ObservableObject
         TableParameterCollection.Add(ParameterType.TableLength,
             new()
             {
-                Name = "Длинна стола L, мм:",
+                Name = "Table length L, mm:",
                 MinValue = 300,
                 MaxValue = 2000,
                 Value = 300,
-                ErrorMessage = $"Ошибка параметра не входит в диапазон"
+                ErrorMessage = $"Parameter error. Value not in range"
             });
         TableParameterCollection.Add(ParameterType.TableHeight,
             new()
             {
-                Name = "Высота стола H, мм:",
+                Name = "Table Height H, mm:",
                 MinValue = 300,
                 MaxValue = 1200,
                 Value = 300,
-                ErrorMessage = "Ошибка параметра не входит в диапазон"
+                ErrorMessage = "Parameter error. Value not in range"
             });
         TableParameterCollection.Add(ParameterType.TableWidth,
             new()
             {
-                Name = "Ширина стола W, мм:",
+                Name = "Table Width W, mm:",
                 MinValue = 300,
                 MaxValue = 2000,
                 Value = 300,
-                ErrorMessage = "Ошибка параметра не входит в диапазон"
+                ErrorMessage = "Parameter error. Value not in range"
             });
         TableParameterCollection.Add(ParameterType.TableThickness,
             new()
             {
-                Name = "Толщина столешницы K, мм:",
+                Name = "Tabletop Thickness K, mm:",
                 MinValue = 10,
                 MaxValue = 50,
                 Value = 10,
-                ErrorMessage = "Ошибка параметра не входит в диапазон"
+                ErrorMessage = "Parameter error. Value not in range"
             });
 
         TableParameterCollection.Add(
             ParameterType.TableLegsWidthDistance,
             new()
             {
-                Name = "Расстояние между ножками стола по ширине w1, мм:",
+                Name = "Table Legs Width Distance w1, mm:",
                 MinValue = TableParameterCollection[ParameterType.TableWidth].Value - 10,
                 MaxValue = TableParameterCollection[ParameterType.TableWidth].Value - 10,
                 Value = TableParameterCollection[ParameterType.TableWidth].Value - 10,
-                ErrorMessage = "Ошибка параметра не входит в диапазон"
+                ErrorMessage = "Parameter error. Value not in range"
             }
         );
 
@@ -107,11 +107,11 @@ public class TableParameters : ObservableObject
             ParameterType.TableLegsLengthDistance,
             new()
             {
-                Name = "Расстояние между ножками стола по длине w2, мм:",
+                Name = "Table Legs Length Distance w2, mm:",
                 MinValue = TableParameterCollection[ParameterType.TableLength].Value - 10,
                 MaxValue = TableParameterCollection[ParameterType.TableLength].Value - 10,
                 Value = TableParameterCollection[ParameterType.TableLength].Value - 10,
-                ErrorMessage = "Ошибка параметра не входит в диапазон"
+                ErrorMessage = "Parameter error. Value not in range"
             }
         );
 
@@ -119,13 +119,13 @@ public class TableParameters : ObservableObject
             ParameterType.TableLengthLegsEdgeDistance,
             new()
             {
-                Name = "Расстояние от края стола по длине v1, мм:",
+                Name = "Table Length Legs Edge Distance v1, mm:",
                 MinValue = 0,
                 MaxValue = TableParameterCollection[ParameterType.TableLength].Value
                            - TableParameterCollection[ParameterType.TableLegsLengthDistance].Value,
                 Value = TableParameterCollection[ParameterType.TableLength].Value
                         - TableParameterCollection[ParameterType.TableLegsLengthDistance].Value,
-                ErrorMessage = "Ошибка параметра не входит в диапазон"
+                ErrorMessage = "Parameter error. Value not in range"
             }
         );
 
@@ -133,13 +133,13 @@ public class TableParameters : ObservableObject
             ParameterType.TableWidthLegsEdgeDistance,
             new()
             {
-                Name = "Расстояние от края стола по ширине v2, мм:",
+                Name = "Table Width Legs Edge Distance v2, mm:",
                 MinValue = 0,
                 MaxValue = TableParameterCollection[ParameterType.TableWidth].Value
                            - TableParameterCollection[ParameterType.TableLegsWidthDistance].Value,
                 Value = TableParameterCollection[ParameterType.TableWidth].Value
                         - TableParameterCollection[ParameterType.TableLegsWidthDistance].Value,
-                ErrorMessage = "Ошибка параметра не входит в диапазон"
+                ErrorMessage = "Parameter error. Value not in range"
             }
         );
 
@@ -153,7 +153,7 @@ public class TableParameters : ObservableObject
     }
 
     /// <summary>
-    /// Обновить зависимые параметры стеллажа.
+    /// Обновление зависимых параметров стола.
     /// </summary>
     public void UpdateValues()
     {
@@ -188,7 +188,7 @@ public class TableParameters : ObservableObject
     }
 
     /// <summary>
-    /// Установить значения поумолчанию
+    /// Установить значения по-умолчанию.
     /// </summary>
     public void SetMinimumValues()
     {
@@ -202,8 +202,9 @@ public class TableParameters : ObservableObject
             TableParameterCollection[ParameterType.TableLegsLengthDistance].MaxValue;
         UpdateValues();
     }
+
     /// <summary>
-    /// Установить значения поумолчанию
+    /// Установить средние значения.
     /// </summary>
     public void SetAverageValues()
     {
@@ -218,9 +219,8 @@ public class TableParameters : ObservableObject
         UpdateValues();
     }
 
-
     /// <summary>
-    /// Установить значения поумолчанию
+    /// Установить максимамльные значения.
     /// </summary>
     public void SetMaximumValues()
     {

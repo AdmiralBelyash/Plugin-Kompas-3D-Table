@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model;
 /// <summary>
-/// Перечисление параметров стола
+/// Перечисление параметров стола.
 /// </summary>
 public enum ParameterType
 {

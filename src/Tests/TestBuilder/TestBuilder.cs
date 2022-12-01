@@ -10,7 +10,7 @@ namespace TestBuilder;
 /// Класс тестирования <see cref="Builder.TableBuilder"/>.
 /// </summary>
 [TestFixture]
-public class TestShelfBuilder
+public class TestTableBuilder
 {
     /// <summary>
     /// Возвращает новый экземпляр класса <see cref="TestApiService"/>.
@@ -23,12 +23,12 @@ public class TestShelfBuilder
     private TableParameters TableParameters => new TableParameters();
 
     /// <summary>
-    /// Возвращает новый объект класса <see cref="Builder.TableBuilder"/>.
+    /// Возвращает новый экземпляр класса <see cref="Builder.TableBuilder"/>.
     /// </summary>
     private TableBuilder TableBuilder => new TableBuilder();
 
     [TestCase(TestName = "Тестирование построения корректного стола.")]
-    public void TestBuildFence_DoesNotThrowException()
+    public void TestBuildTable_DoesNotThrowException()
     {
         var tableBuilder = TableBuilder;
         var testApiService = TestApiService;

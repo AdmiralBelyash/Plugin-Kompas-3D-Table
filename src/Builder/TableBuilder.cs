@@ -15,7 +15,7 @@ namespace Builder
         /// Метод для создания стола.
         /// </summary>
         /// <param name="tableParameters">Параметры стола</param>
-        /// <param name="apiService">Компас апи</param>
+        /// <param name="apiService">Сапр апи</param>
         public void BuildTable(TableParameters tableParameters, IWrapper apiService)
         {
             apiService.CreateDocument();
