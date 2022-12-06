@@ -11,4 +11,10 @@
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Kompas6API5">
+      <HintPath>..\Common\Kompas6API5.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

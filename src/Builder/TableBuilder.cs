@@ -12,7 +12,7 @@ namespace Builder
     public class TableBuilder
     {
         /// <summary>
-        ///  параметры стола.
+        /// Параметры стола.
         /// </summary>
         private TableParameters _tableParameters;
 
@@ -24,8 +24,8 @@ namespace Builder
         /// <summary>
         /// Метод для создания стола.
         /// </summary>
-        /// <param name="tableParameters">Параметры стола</param>
-        /// <param name="apiService">Сапр апи</param>
+        /// <param name="tableParameters"> Параметры стола. </param>
+        /// <param name="apiService"> Сапр апи. </param>
         public void BuildTable(TableParameters tableParameters, IWrapper apiService)
         {
             _apiService = apiService;
@@ -40,6 +40,10 @@ namespace Builder
             _createLeftBottomTableLeg();
         }
 
+
+        /// <summary>
+        /// Создание столешницы.
+        /// </summary>
         private void _createTableTop()
         {
             var points = new List<PointF>
@@ -54,8 +58,12 @@ namespace Builder
             sketchXy.CreateTwoPointRectangle(points[0], points[1]);
 
             _apiService.Extrude(sketchXy, _tableParameters.TableParameterCollection[ParameterType.TableThickness].Value);
+            _apiService.RoundCorners(_tableParameters.TableParameterCollection[ParameterType.TableThickness].Value);
         }
 
+        /// <summary>
+        /// Создание ножки.
+        /// </summary>
         private void _createRightTopTableLeg()
         {
             var points = new List<PointF>
@@ -77,6 +85,9 @@ namespace Builder
             _apiService.Extrude(sketchXy, _tableParameters.TableParameterCollection[ParameterType.TableHeight].Value);
         }
 
+        /// <summary>
+        /// Создание ножки.
+        /// </summary>
         private void _createRightBottomTableLeg()
         {
             var points = new List<PointF>
@@ -100,6 +111,9 @@ namespace Builder
             _apiService.Extrude(sketchXy, _tableParameters.TableParameterCollection[ParameterType.TableHeight].Value);
         }
 
+        /// <summary>
+        /// Создание ножки.
+        /// </summary>
         private void _createLeftTopTableLeg()
         {
             var points = new List<PointF>
@@ -123,6 +137,9 @@ namespace Builder
             _apiService.Extrude(sketchXy, _tableParameters.TableParameterCollection[ParameterType.TableHeight].Value);
         }
 
+        /// <summary>
+        /// Создание ножки.
+        /// </summary>
         private void _createLeftBottomTableLeg()
         {
             var points = new List<PointF>

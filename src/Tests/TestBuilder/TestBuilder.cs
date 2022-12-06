@@ -35,9 +35,12 @@ public class TestTableBuilder
         var tableParameters = TableParameters;
 
         Assert.DoesNotThrow(() => tableBuilder.BuildTable(tableParameters, testApiService), "Произошла ошибка при построении.");
-        Assert.IsTrue(testApiService.IsCreateDocument, "Документ не создан.");
-        Assert.IsTrue(testApiService.IsCreateNewSketch, "Ни один эскиз не создан.");
-        Assert.IsTrue(testApiService.IsCreatePoint, "Ни одна точка не создана.");
-        Assert.IsTrue(testApiService.IsExtrude, "Ни одного выдавливания не выполнено.");
+        Assert.IsTrue(testApiService.IsCreateDocument, "Документ создан.");
+        Assert.IsTrue(testApiService.IsCreateNewSketch, "Эскиз создан.");
+        Assert.IsTrue(testApiService.IsCreatePoint, "Точка создана.");
+        Assert.IsTrue(testApiService.IsExtrude, "Выдавливание выполнено.");
+        Assert.IsTrue(testApiService.IsRounded, "Скругление углов выполнено.");
+        Assert.IsTrue(testApiService.IsCreateRectangle, "Прямоугольник создан.");
+
     }
 }

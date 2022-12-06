@@ -49,7 +49,7 @@ public class TableParameters : ObservableObject
     #region -- Public Methods --
 
     /// <summary>
-    /// Установить значения по-умолчанию
+    /// Установить значения по-умолчанию.
     /// </summary>
     public void SetDefaultValues()
     {
@@ -142,6 +142,18 @@ public class TableParameters : ObservableObject
                 ErrorMessage = "Parameter error. Value not in range"
             }
         );
+        TableParameterCollection.Add(
+            ParameterType.TableCornerRadius,
+            new()
+            {
+                Name = "Table Corner Radius Fillet, mm:",
+                MinValue = 0,
+                MaxValue = 2 * ((TableParameterCollection[ParameterType.TableLengthLegsEdgeDistance].Value 
+                            + TableParameterCollection[ParameterType.TableWidthLegsEdgeDistance].Value) / 2),
+                Value = 0,
+                ErrorMessage = "Parameter error. Value not in range"
+            }
+        );
 
     }
 
@@ -184,11 +196,15 @@ public class TableParameters : ObservableObject
         TableParameterCollection[ParameterType.TableWidthLegsEdgeDistance].Value =
             TableParameterCollection[ParameterType.TableWidth].Value
             - TableParameterCollection[ParameterType.TableLegsWidthDistance].Value;
+        TableParameterCollection[ParameterType.TableCornerRadius].MaxValue =
+            2 * ((TableParameterCollection[ParameterType.TableLengthLegsEdgeDistance].Value 
+                  + TableParameterCollection[ParameterType.TableWidthLegsEdgeDistance].Value) / 2);
+
 
     }
 
     /// <summary>
-    /// Установить минимальные.
+    /// Установить минимальные параметры.
     /// </summary>
     public void SetMinimumValues()
     {

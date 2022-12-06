@@ -32,7 +32,7 @@ public class KompasSketch: ISketch
     /// Конструктор.
     /// </summary>
     /// <param name="part"></param>
-    /// <param name="n">1 - ZY; 2 - ZX; 3 - XY -> Плоскости.</param>
+    /// <param name="n"> 1 - ZY; 2 - ZX; 3 - XY -> Плоскости. </param>
     public KompasSketch(ksPart part, int n)
     {
         ksEntity plane;

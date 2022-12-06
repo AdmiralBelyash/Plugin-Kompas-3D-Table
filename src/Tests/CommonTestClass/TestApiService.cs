@@ -24,6 +24,11 @@ public class TestApiService: IWrapper
     public bool IsCreatePoint { get; private set; } = false;
 
     /// <summary>
+    /// Флаг создания прямоугольника.
+    /// </summary>
+    public bool IsCreateRectangle { get; private set; } = false;
+
+    /// <summary>
     /// Флаг создания эскиза.
     /// </summary>
     public bool IsCreateNewSketch { get; private set; } = false;
@@ -32,6 +37,11 @@ public class TestApiService: IWrapper
     /// Флаг выдавливания.
     /// </summary>
     public bool IsExtrude { get; private set; } = false;
+
+    /// <summary>
+    /// Флаг закругления.
+    /// </summary>
+    public bool IsRounded { get; private set; } = false;
 
    /// <summary>
    /// Создание документа.
@@ -46,23 +56,37 @@ public class TestApiService: IWrapper
     /// </summary>
     /// <param name="x"> Координата х</param>
     /// <param name="y"> Координата y</param>
-    /// <returns></returns>
+    /// <returns> Точка на плоскости </returns>
     public PointF CreatePoint(double x, double y)
     {
         IsCreatePoint = true;
         return new PointF((float)x, (float)y);
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Создание тестового эскиза.
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns> Тестовый эскиз </returns>
     public ISketch CreateNewSketch(int n)
     {
         IsCreateNewSketch = true;
         return new TestSketch();
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Псевдо выдавливание.
+    /// </summary>
+    /// <param name="sketch"> Эскиз. </param>
+    /// <param name="distance"> Дистанция для выдавливания. </param>
     public void Extrude(ISketch sketch, double distance)
     {
+        IsCreateRectangle = true;
         IsExtrude = true;
+    }
+
+    public void RoundCorners(double radius)
+    {
+        IsRounded = true;
     }
 }
