@@ -34,6 +34,7 @@ namespace Builder
             _apiService.CreateDocument();
 
             _createTableTop();
+            _roundEdges();
             _createRightTopTableLeg();
             _createRightBottomTableLeg();
             _createLeftTopTableLeg();
@@ -58,7 +59,18 @@ namespace Builder
             sketchXy.CreateTwoPointRectangle(points[0], points[1]);
 
             _apiService.Extrude(sketchXy, _tableParameters.TableParameterCollection[ParameterType.TableThickness].Value);
-            _apiService.RoundCorners(_tableParameters.TableParameterCollection[ParameterType.TableThickness].Value);
+        }
+
+        /// <summary>
+        /// Закругление углов.
+        /// </summary>
+        private void _roundEdges()
+        {
+            if (_tableParameters.TableParameterCollection[ParameterType.TableThickness].Value <= 0)
+            {
+                return;
+            }
+            _apiService.RoundCorners(_tableParameters.TableParameterCollection[ParameterType.TableCornerRadius].Value);
         }
 
         /// <summary>
