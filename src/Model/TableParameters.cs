@@ -216,6 +216,7 @@ public class TableParameters : ObservableObject
             TableParameterCollection[ParameterType.TableLegsWidthDistance].MaxValue;
         TableParameterCollection[ParameterType.TableLegsLengthDistance].Value =
             TableParameterCollection[ParameterType.TableLegsLengthDistance].MaxValue;
+        TableParameterCollection[ParameterType.TableCornerRadius].Value = 0;
         UpdateValues();
     }
 
@@ -232,6 +233,7 @@ public class TableParameters : ObservableObject
             TableParameterCollection[ParameterType.TableLegsWidthDistance].MaxValue;
         TableParameterCollection[ParameterType.TableLegsLengthDistance].Value =
             TableParameterCollection[ParameterType.TableLegsLengthDistance].MaxValue;
+        TableParameterCollection[ParameterType.TableCornerRadius].Value = 0;
         UpdateValues();
     }
 
@@ -248,6 +250,7 @@ public class TableParameters : ObservableObject
             TableParameterCollection[ParameterType.TableLegsWidthDistance].MaxValue;
         TableParameterCollection[ParameterType.TableLegsLengthDistance].Value =
             TableParameterCollection[ParameterType.TableLegsLengthDistance].MaxValue;
+        TableParameterCollection[ParameterType.TableCornerRadius].Value = 0;
         UpdateValues();
     }
 
