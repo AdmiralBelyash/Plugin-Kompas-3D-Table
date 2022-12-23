@@ -3,23 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "Builder\Builder.csproj", "{81E2BCEF-8859-4400-90E0-BDD783A1A004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Builder\Builder.csproj", "{81E2BCEF-8859-4400-90E0-BDD783A1A004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KompasApi", "KompasApi\KompasApi.csproj", "{B631B31E-DC0E-4EA9-B20A-72511CEAB3E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KompasApi", "KompasApi\KompasApi.csproj", "{B631B31E-DC0E-4EA9-B20A-72511CEAB3E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7CF236A3-393B-4CED-B8C7-B541840A3A20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{7CF236A3-393B-4CED-B8C7-B541840A3A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginKompas3DTableApp", "PluginKompas3DTableApp\PluginKompas3DTableApp.csproj", "{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginKompas3DTableApp", "PluginKompas3DTableApp\PluginKompas3DTableApp.csproj", "{D33099EF-3C70-4EA3-BE7B-2EE21F578DE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{722EF699-1452-4C6D-AF98-AA1F66AB7EDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBuilder", "Tests\TestBuilder\TestBuilder.csproj", "{8F00662E-0384-4F8C-ADEE-BC18A8EB32A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBuilder", "Tests\TestBuilder\TestBuilder.csproj", "{8F00662E-0384-4F8C-ADEE-BC18A8EB32A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTestClass", "Tests\CommonTestClass\CommonTestClass.csproj", "{19640D1E-D556-4EEC-8F9F-05FAA3502273}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonTestClass", "Tests\CommonTestClass\CommonTestClass.csproj", "{19640D1E-D556-4EEC-8F9F-05FAA3502273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel", "Tests\TestModel\TestModel.csproj", "{6F09018A-60A7-4FE5-AD8C-25786900D304}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestModel", "Tests\TestModel\TestModel.csproj", "{6F09018A-60A7-4FE5-AD8C-25786900D304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTableBuildingVM", "Tests\TesttableBuildingVM\TestTableBuildingVM.csproj", "{4798F370-8B31-42A4-9DBC-8F652C589C10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTableBuildingVM", "Tests\TesttableBuildingVM\TestTableBuildingVM.csproj", "{4798F370-8B31-42A4-9DBC-8F652C589C10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StressTesting", "Tests\StressTesting\StressTesting.csproj", "{AE4EE858-C07A-4D50-BF62-1EF59B2FDD04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{4798F370-8B31-42A4-9DBC-8F652C589C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4798F370-8B31-42A4-9DBC-8F652C589C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4798F370-8B31-42A4-9DBC-8F652C589C10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE4EE858-C07A-4D50-BF62-1EF59B2FDD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE4EE858-C07A-4D50-BF62-1EF59B2FDD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE4EE858-C07A-4D50-BF62-1EF59B2FDD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE4EE858-C07A-4D50-BF62-1EF59B2FDD04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{19640D1E-D556-4EEC-8F9F-05FAA3502273} = {722EF699-1452-4C6D-AF98-AA1F66AB7EDA}
 		{6F09018A-60A7-4FE5-AD8C-25786900D304} = {722EF699-1452-4C6D-AF98-AA1F66AB7EDA}
 		{4798F370-8B31-42A4-9DBC-8F652C589C10} = {722EF699-1452-4C6D-AF98-AA1F66AB7EDA}
+		{AE4EE858-C07A-4D50-BF62-1EF59B2FDD04} = {722EF699-1452-4C6D-AF98-AA1F66AB7EDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79B8FF2A-5E67-4682-B518-226F2D9542AF}

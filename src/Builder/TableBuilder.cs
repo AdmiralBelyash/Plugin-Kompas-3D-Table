@@ -66,7 +66,7 @@ namespace Builder
         /// </summary>
         private void _roundEdges()
         {
-            if (_tableParameters.TableParameterCollection[ParameterType.TableThickness].Value <= 0)
+            if (_tableParameters.TableParameterCollection[ParameterType.TableCornerRadius].Value <= 0)
             {
                 return;
             }
