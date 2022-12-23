@@ -7,6 +7,7 @@
         xmlns:helpers="clr-namespace:PluginKompas3DTableApp"
         xmlns:vm="clr-namespace:PluginKompas3DTableApp"
         xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="MainWindow" Height="620" Width="968">
@@ -68,11 +69,12 @@
                             <TextBlock Grid.Row="0" Grid.Column="0" 
                                                    Text="{Binding Name}" />
                             <Border Grid.Row="0" Grid.Column="1" x:Name="Border">
-                                <TextBox x:Name="TextBox" Text="{Binding Path=Value, Mode=TwoWay, ValidatesOnExceptions=True,
+                                <xctk:DoubleUpDown x:Name="TextBox" Value="{Binding Path=Value, Mode=TwoWay, ValidatesOnExceptions=True,
                                                 ValidatesOnDataErrors=True,
                                                 ValidatesOnNotifyDataErrors=True,
                                                 UpdateSourceTrigger=PropertyChanged}" 
-                                                     HorizontalAlignment="Right" MinWidth="100" PreviewTextInput="TextBox_OnPreviewTextInput">
+                                              HorizontalAlignment="Right" MinWidth="100"
+                                              FormatString="F1" Increment="0.5">
                                     <b:Interaction.Triggers>
                                         <b:EventTrigger EventName="TextChanged">
                                             <b:InvokeCommandAction 
@@ -81,7 +83,7 @@
                                                             Command="{Binding Source={StaticResource CheckErrors}, Path=DataSource.CheckErrors}" />
                                         </b:EventTrigger>
                                     </b:Interaction.Triggers>
-                                </TextBox>
+                                </xctk:DoubleUpDown>
 
                                 <Border.Style>
                                     <Style TargetType="Border">

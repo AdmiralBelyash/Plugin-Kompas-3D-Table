@@ -25,11 +25,5 @@ namespace PluginKompas3DTableApp
         {
             InitializeComponent();
         }
-
-        private void TextBox_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
     }
 }
