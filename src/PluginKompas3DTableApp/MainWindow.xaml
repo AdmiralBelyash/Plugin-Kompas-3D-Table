@@ -10,15 +10,15 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="620" Width="968">
+        Title="MainWindow" Height="630" Width="968">
 
 
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
     <Window.Resources>
-        <helpers:DataContextProxy x:Key="CheckErrors" DataSource="{Binding }"/>
-        <helpers:DataContextProxy x:Key="UpdateParametersCommand" DataSource="{Binding }"/>
+        <helpers:DataContextProxy x:Key="CheckErrors" DataSource="{Binding CheckErrors}"/>
+        <helpers:DataContextProxy x:Key="UpdateParametersCommand" DataSource="{Binding UpdateParametersCommand}"/>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -76,11 +76,11 @@
                                               HorizontalAlignment="Right" MinWidth="100"
                                               FormatString="F1" Increment="0.5">
                                     <b:Interaction.Triggers>
-                                        <b:EventTrigger EventName="TextChanged">
+                                        <b:EventTrigger EventName="ValueChanged">
                                             <b:InvokeCommandAction 
-                                                            Command="{Binding Source={StaticResource UpdateParametersCommand}, Path=DataSource.UpdateParametersCommand}" />
+                                                            Command="{Binding Source={StaticResource UpdateParametersCommand}, Path=DataSource}" />
                                             <b:InvokeCommandAction 
-                                                            Command="{Binding Source={StaticResource CheckErrors}, Path=DataSource.CheckErrors}" />
+                                                            Command="{Binding Source={StaticResource CheckErrors}, Path=DataSource}" />
                                         </b:EventTrigger>
                                     </b:Interaction.Triggers>
                                 </xctk:DoubleUpDown>
