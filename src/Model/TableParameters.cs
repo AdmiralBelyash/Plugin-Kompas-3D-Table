@@ -7,11 +7,20 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace Model;
+
+/// <summary>
+/// Класс содержащий параметры стола.
+/// </summary>
 public class TableParameters : ObservableObject
 {
     #region -- Fields --
-
+    
+    /// <summary>
+    /// Коллекция всех параметров стола. Где ключом является их тип.
+    /// </summary>
     private Dictionary<ParameterType, Parameter> _tableParameterCollection;
+
+    private const double MinEdgeDistance = 10.0;
 
 
     #endregion
@@ -96,9 +105,9 @@ public class TableParameters : ObservableObject
             new()
             {
                 Name = "Table Legs Width Distance w1, mm:",
-                MinValue = TableParameterCollection[ParameterType.TableWidth].Value - 10,
-                MaxValue = TableParameterCollection[ParameterType.TableWidth].Value - 10,
-                Value = TableParameterCollection[ParameterType.TableWidth].Value - 10,
+                MinValue = TableParameterCollection[ParameterType.TableWidth].Value - MinEdgeDistance,
+                MaxValue = TableParameterCollection[ParameterType.TableWidth].Value - MinEdgeDistance,
+                Value = TableParameterCollection[ParameterType.TableWidth].Value - MinEdgeDistance,
                 ErrorMessage = "Parameter error. Value not in range"
             }
         );
@@ -108,9 +117,9 @@ public class TableParameters : ObservableObject
             new()
             {
                 Name = "Table Legs Length Distance w2, mm:",
-                MinValue = TableParameterCollection[ParameterType.TableLength].Value - 10,
-                MaxValue = TableParameterCollection[ParameterType.TableLength].Value - 10,
-                Value = TableParameterCollection[ParameterType.TableLength].Value - 10,
+                MinValue = TableParameterCollection[ParameterType.TableLength].Value - MinEdgeDistance,
+                MaxValue = TableParameterCollection[ParameterType.TableLength].Value - MinEdgeDistance,
+                Value = TableParameterCollection[ParameterType.TableLength].Value - MinEdgeDistance,
                 ErrorMessage = "Parameter error. Value not in range"
             }
         );
@@ -157,6 +166,10 @@ public class TableParameters : ObservableObject
 
     }
 
+    /// <summary>
+    /// Метод для получения ширины ножек.
+    /// </summary>
+    /// <returns>Ширина ножки. </returns>
     public double GetLegsWidth()
     {
         return Math.Abs((TableParameterCollection[ParameterType.TableWidth].Value -
@@ -169,17 +182,18 @@ public class TableParameters : ObservableObject
     /// </summary>
     public void UpdateValues()
     {
+        //TODO: Const
         TableParameterCollection[ParameterType.TableLegsWidthDistance].MinValue =
-            TableParameterCollection[ParameterType.TableWidth].Value / 2 - 10;
+            TableParameterCollection[ParameterType.TableWidth].Value / 2 - MinEdgeDistance;
         TableParameterCollection[ParameterType.TableLegsWidthDistance].MaxValue =
-            TableParameterCollection[ParameterType.TableWidth].Value - 10;
+            TableParameterCollection[ParameterType.TableWidth].Value - MinEdgeDistance;
         TableParameterCollection[ParameterType.TableLegsWidthDistance].Value =
             TableParameterCollection[ParameterType.TableLegsWidthDistance].Value;
 
         TableParameterCollection[ParameterType.TableLegsLengthDistance].MinValue =
-            TableParameterCollection[ParameterType.TableLength].Value / 2 - 10;
+            TableParameterCollection[ParameterType.TableLength].Value / 2 - MinEdgeDistance;
         TableParameterCollection[ParameterType.TableLegsLengthDistance].MaxValue =
-            TableParameterCollection[ParameterType.TableLength].Value - 10;
+            TableParameterCollection[ParameterType.TableLength].Value - MinEdgeDistance;
         TableParameterCollection[ParameterType.TableLegsLengthDistance].Value =
             TableParameterCollection[ParameterType.TableLegsLengthDistance].Value;
 
@@ -238,7 +252,7 @@ public class TableParameters : ObservableObject
     }
 
     /// <summary>
-    /// Установить максимамльные значения.
+    /// Установить максимальные значения.
     /// </summary>
     public void SetMaximumValues()
     {

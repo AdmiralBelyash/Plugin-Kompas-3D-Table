@@ -9,6 +9,9 @@ using Model;
 
 namespace Builder
 {
+    /// <summary>
+    /// Класс который строит 3D модель стола.
+    /// </summary>
     public class TableBuilder
     {
         /// <summary>

@@ -8,6 +8,10 @@ using Kompas6API5;
 using Kompas6Constants3D;
 
 namespace KompasApi;
+
+/// <summary>
+/// Класс эскиза Компас 3D.
+/// </summary>
 public class KompasSketch: ISketch
 {
     /// <summary>
@@ -36,18 +40,24 @@ public class KompasSketch: ISketch
     public KompasSketch(ksPart part, int n)
     {
         ksEntity plane;
-        if (n == 1)
+        switch (n)
         {
-            plane = (ksEntity)part.GetDefaultEntity((int)Obj3dType.o3d_planeYOZ);
-        }
-        else if (n == 2)
-        {
-            plane = (ksEntity)part.GetDefaultEntity((int)Obj3dType.o3d_planeXOZ);
+            case 1:
+            {
+                plane = (ksEntity)part.GetDefaultEntity((int)Obj3dType.o3d_planeYOZ);
+                break;
+            };
+            case 2:
+            {
+                plane = (ksEntity)part.GetDefaultEntity((int)Obj3dType.o3d_planeXOZ);
+                break;
+            }
+            default:
+            {
+                plane = (ksEntity)part.GetDefaultEntity((int)Obj3dType.o3d_planeXOY);
+                break;
+            }
 
-        }
-        else
-        {
-            plane = (ksEntity)part.GetDefaultEntity((int)Obj3dType.o3d_planeXOY);
         }
         Sketch = (ksEntity)part.NewEntity((int)Obj3dType.o3d_sketch);
         _sketchDefinition = (ksSketchDefinition)Sketch.GetDefinition();

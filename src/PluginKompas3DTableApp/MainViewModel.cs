@@ -11,6 +11,9 @@ using Model;
 
 namespace PluginKompas3DTableApp
 {
+    /// <summary>
+    /// Модель представления. Связь модели и отображения.
+    /// </summary>
     public class MainViewModel : ObservableObject
     {
         #region -- Fields --

@@ -10,6 +10,10 @@ using Kompas6Constants3D;
 using KompasAPI7;
 
 namespace KompasApi;
+
+/// <summary>
+/// Класс обертка для взаимеодействия с api Компас 3D.
+/// </summary>
 public class KompasWrapper: IWrapper
 {
     /// <summary>

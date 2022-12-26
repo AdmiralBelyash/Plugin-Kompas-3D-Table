@@ -7,6 +7,9 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Model
 {
+    /// <summary>
+    /// Класс параметра.
+    /// </summary>
     public class Parameter : ObservableObject
     {
         #region -- Fields --
